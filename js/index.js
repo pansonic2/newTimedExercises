@@ -43,3 +43,24 @@ function timedText() {
     
 
 
+a = 0;
+function showstuff() {
+  if (a < allPics.length){
+  document.getElementById("demo").innerHTML = '<img src="' + allPics[a] + '">';
+  console.log(a);
+  a+=1;}
+  else {a=0;}
+}
+
+  allPics = [ 
+  './img/2TimeChampion.png', 
+  './img/3CarGarage.jpg', 
+  './img/3CourseMeal.jpg', 
+  './img/3PieceBand.jpg',
+  './img/3PieceSuit.jpg',
+  './img/3StoryHouse.jpg',
+  './img/5StepProcess.jpg'];
+
+
+
+
