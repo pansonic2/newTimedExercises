@@ -202,7 +202,7 @@ header a:hover{
   background-color: #e6e6e6;
 }
 
-#demo {
+#nounPhrasePrompt {
     cursor:pointer;
     text-decoration: underline;
     color: blue;

@@ -46,7 +46,7 @@ function timedText() {
 a = 0;
 function showstuff() {
   if (a < allPics.length){
-  document.getElementById("demo").innerHTML = '<img src="' + allPics[a] + '">';
+  document.getElementById("nounPhrasePrompt").innerHTML = '<img src="' + allPics[a] + '">';
   console.log(a);
   a+=1;}
   else {a=0;}
