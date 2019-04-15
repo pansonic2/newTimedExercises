@@ -55,6 +55,10 @@ header a{
     font-size: 16px;
 }
 
+header .highlightWrap {
+    font-size: 30px;
+    text-transform: none;
+}
 
 
 header li{
@@ -226,6 +230,10 @@ aside#sidebar .quote input, aside#sidebar .quote textarea{
 article#main-column{
     float: left;
     width:65%;
+}
+
+services#p{
+    font-style:bold;
 }
 
 /*services*/
