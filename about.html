@@ -32,25 +32,29 @@
     <div class="container">
         <article id="main-column">
             <h1 class="page-title">
-                *header1*
+                Missing articles
             </h1>
-            <p>
-                *paragraph1*
+<br>
+ <span id="text1">
+</span>            
+<button onclick="hideArticles()" class="exerciseButtons"> New sentence </button>
 
-            </p>
-            <p>
-                *paragraph2* 
+<p id="updatedText"></p>
+<p id="numberOfArticles"></p>
 
-            </p>
+<br>
 
+<button onclick="showAnswers()" class="exerciseButtons" > Show answer </button>
+
+<p id="answerText"></p>
         </article>
     <aside id="sidebar">
         <div class="dark">
         <h3>
-            *header3 in sidebar*
+            Missing articles
         </h3>
         <p>
-            *paragraph in sidebar* 
+            Only THE articles are missing in this task.  
         </p>
         
         </div>
@@ -66,6 +70,54 @@
         2019
     </p>
 </footer>
+
+<script>
+
+    let clickNumber = 0;
+    
+    
+    sentenceBank = ["During Jackson's second term, his opponents had gradually come together to form the Whig Party. Whigs and Democrats held different attitudes toward the changes brought about by the market, banks, and commerce. The Democrats tended to view society as a continuing conflict between 'the people'-farmers, planters, and workers-and a set of greedy aristocrats. ", "Whigs and Democrats differed not only in their attitudes toward the market but also about how active the central government should be in people's lives. Despite Andrew Jackson's inclination to be a strong President, Democrats as a rule believed in limited government. ", "In classic research Paul Ekman took photographs of people exhibiting the emotions of anger, disgust, fear, happiness, and sadness. He then asked people around the world to indicate what emotions were being depicted in them.", "As a general rule, the higher a mountain is, the more recently it was formed; for example, the high mountains of the Himalayas are only about 50 million years old.", "Whatever the reason for mountain formation, as soon as land rises above sea level it is subjected to destructive forces. "]
+    
+    
+    function hideArticles(){
+        let strOriginalText = sentenceBank[clickNumber];
+    
+    
+     let strText = document.querySelector('#text1').textContent;
+    
+        let count =  strOriginalText.match(/\bthe\b/g); 
+        count = count? count.length : 0;  //checking if there are matches or not.
+        document.querySelector("#numberOfArticles").innerHTML = count + " definite (THE) articles missing.";
+    
+    
+    
+        let removedArticles = strOriginalText.replace(/\bthe\b/g, "");
+    
+      document.querySelector("#updatedText").innerHTML = removedArticles;
+      ;
+      if (clickNumber < sentenceBank.length-1)
+        {clickNumber+=1}
+    else {clickNumber=0};
+    
+    document.querySelector("#answerText").innerHTML = "";
+    
+    }
+    
+    function showAnswers(){
+        if (clickNumber >0)
+        {let colorAnswer = sentenceBank[clickNumber-1];
+            let finalAnswer = colorAnswer.replace(/\bthe\b/g, "THE");
+            document.querySelector("#answerText").innerHTML = finalAnswer;}
+    else {let colorAnswer = sentenceBank[sentenceBank.length-1];
+        let finalAnswer = colorAnswer.replace(/\bthe\b/g, "THE");
+        document.querySelector("#answerText").innerHTML = finalAnswer;}
+    };
+    
+    
+    
+    </script>
+
+
 
 </body>
 </html>
